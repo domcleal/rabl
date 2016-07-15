@@ -3,7 +3,7 @@ module Rabl
     # Override the original digest function to ignore partial which
     # rabl doesn't use the Rails conventional _ symbol.
     if Gem::Version.new(Rails.version) >= Gem::Version.new('5.0.0.beta1')
-      def self.digest(name:, finder:, **options)
+      def self.digest(name: raise('name is required'), finder: raise('finder is required'), **options)
 
         options.assert_valid_keys(:dependencies, :partial)
 
